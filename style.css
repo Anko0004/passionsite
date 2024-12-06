@@ -1,0 +1,241 @@
+/*************** Reset ********************/
+img {
+  width: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Sørg for at padding og margin ikke påvirker størrelsen */
+}
+/*************** Reset ************/
+
+/*************** Header ****************/
+header {
+  background-color: #f4eedd;
+  padding: 20px;
+  display: flex;
+  align-items: center; /* Centrerer elementerne lodret */
+  justify-content: center; /* Centrerer logoet horisontalt */
+}
+
+/****************burger_menu*********/
+/****************burger_menu*********/
+.burger_menu {
+  height: 30px;
+  width: 30px;
+  margin-left: auto;
+  position: absolute; /* Bruges til at placere den i højre hjørne */
+  right: 10%; /* Placering fra højre */
+  top: 5%; /* Placering fra toppen */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* For at få linjerne til at være jævnt fordelt */
+  z-index: 1000; /* Sikrer, at burger-menuen er over andre elementer */
+  cursor: pointer; /* Gør burger-menuen klikbar */
+}
+
+.burger_menu span {
+  height: 5px;
+  width: 100%;
+  background-color: #3a4a15;
+  border-radius: 25px;
+  transition: 0.3s ease;
+}
+
+.off_screen_menu {
+  background-color: #d9d9d9;
+  height: 100vh;
+  width: 150px; /* Størrelsen på menuen */
+  position: fixed;
+  top: 0;
+  right: -250px; /* Skjuler menuen udenfor skærmen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  transition: 0.3s ease;
+  z-index: 999; /* Sørg for at denne ikke overlapper burger-menuen */
+}
+
+.off_screen_menu.active {
+  right: 0; /* Vises når aktiv */
+}
+
+.off_screen_menu ul {
+  list-style-type: none; /* Fjern punkttegnene */
+  padding: 0;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  color: #3a4a15;
+}
+
+.off_screen_menu ul li {
+  margin: 20px 0;
+}
+
+/****************burger_menu*********/
+/* Logo styling */
+.logo {
+  display: flex;
+  justify-content: center; /* Centrerer logoet */
+}
+
+.logo img {
+  max-width: 150px; /* Begræns størrelsen på logoet */
+}
+/*************** Header ****************/
+
+/***************hero_image**************/
+.hero_image {
+  position: relative; /* Gør det muligt at positionere elementer inde i containeren */
+  width: 100%; /* Sørger for, at containeren fylder hele bredden */
+  height: auto; /* Justerer højden efter billedet */
+}
+
+.hero_image img {
+  width: 100%; /* Sørger for, at billedet fylder containeren */
+  height: auto; /* Bevarer billedets proportioner */
+  display: block; /* Fjerner uønskede mellemrum omkring billedet */
+}
+
+.iframe_hero {
+  position: absolute; /* Tillader overlappende placering */
+  top: 50%; /* Placerer iframe i midten (vertikalt) */
+  left: 50%; /* Placerer iframe i midten (horisontalt) */
+  transform: translate(-50%, -50%); /* Justerer positionen, så iframe centrerer korrekt */
+  width: 96vw;
+  height: 90vw;
+}
+
+.iframe_hero iframe {
+  width: 100%; /* Sørger for, at iframe fylder hele dens container */
+  height: 100%; /* Sørger for responsiv højde */
+  border: none; /* Fjerner kant omkring iframe */
+}
+
+/***************hero_image**************/
+
+/**************baggrunds farve*********/
+
+main {
+  background-color: #f4eedd;
+  padding-inline: 1rem;
+}
+/**************baggrunds farve*********/
+
+/****************h1*****************/
+h1 {
+  color: #3a4a15;
+  font-family: "Jua", sans-serif;
+  font-weight: 400;
+  padding-top: 2rem;
+}
+/****************h1*****************/
+
+/****************h2*****************/
+h2 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  color: #3a4a15;
+}
+/*****************h2****************/
+
+/*****************p****************/
+p {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  color: #3a4a15;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+/*****************p****************/
+/*******billeder********/
+.billede1 {
+  margin-bottom: 1.5rem;
+  padding-top: 2rem;
+}
+.grid_1-1-1-1 {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+/*******billeder********/
+
+/************videoer*********/
+video {
+  width: 100%; /* Fylder hele bredden af containeren */
+  max-width: 100%; /* Forhindrer, at videoen bliver større end containeren */
+  height: auto; /* Bevarer proportionerne */
+}
+
+.yt_video {
+  position: relative; /* Nødvendig for at skabe en kontekst */
+  width: 100%; /* Fylder hele bredden af containeren */
+  height: 0; /* Sætter højden til 0 som udgangspunkt */
+  padding-bottom: 56.25%; /* 16:9 formatforhold (højde = bredde * 9 / 16) */
+  overflow: hidden; /* Sikrer, at der ikke vises noget uden for containeren */
+}
+
+.yt_video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Gør iframe'en responsiv */
+  border: none; /* Fjerner rammer */
+}
+/************videoer*********/
+
+/***************computersite**********/
+@media (min-width: 600px) {
+  main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 600px) {
+  header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 600px) {
+  footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 600px) {
+  .hero_image {
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+
+/***************computersite**********/
+
+/****************footer************/
+footer {
+  background-color: #d9d9d9;
+  padding: 30px 0; /* Giver luft foroven og forneden */
+}
+
+.instagram {
+  display: flex;
+  justify-content: center; /* Centrerer horisontalt */
+  align-items: center; /* Centrerer vertikalt */
+}
+
+.instagram img {
+  max-width: 90px;
+}
+/****************footer************/
